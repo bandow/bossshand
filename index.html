@@ -16,10 +16,10 @@
 </head>
 <body>
 <div class="wrapper">
-  <header class="header">
+  <header class="header header-index">
       <div class="left"><a class="arrow-left" href="login.html"></a></div>
       <div class="middle"><a href=""><img src="images/index_icon1.png" alt=""></a></div>
-      <div class="right"><a href=""><img src="images/index_icon2.png" alt=""></a></div>
+      <div class="right"><a href="javascript:;"><img src="images/index_icon2.png" alt=""></a></div>
   </header>
   <div class="index-content">
     <div class="top">
@@ -43,37 +43,294 @@
     <div class="footer-list">
       <ul>
         <li>
-          <i><img src="images/index_icon4.png" alt=""></i>
-          <p>房态</p>
+          <a href="roomState.html">
+            <i><img src="images/index_icon4.png" alt=""></i>
+            <p>房态</p>
+          </a>
         </li>
          <li>
-          <i><img src="images/index_icon5.png" alt=""></i>
-          <p>营业收入表</p>
+          <a href="income.html">
+            <i><img src="images/index_icon5.png" alt=""></i>
+            <p>营业收入表</p>
+          </a>
         </li>
          <li>
-          <i><img src="images/index_icon6.png" alt=""></i>
-          <p>经营统计表</p>
+          <a href="statistic.html">
+            <i><img src="images/index_icon6.png" alt=""></i>
+            <p>经营统计表</p>
+          </a>
         </li>
          <li>
-          <i><img src="images/index_icon7.png" alt=""></i>
-          <p>权限分配</p>
+          <a href="">
+            <i><img src="images/index_icon7.png" alt=""></i>
+            <p>权限分配</p>
+          </a>
         </li>
          <li>
-          <i><img src="images/index_icon8.png" alt=""></i>
-          <p>关于我们</p>
+          <a href="">
+            <i><img src="images/index_icon8.png" alt=""></i>
+            <p>关于我们</p>
+          </a>
         </li>
          <li>
-          <i><img src="images/index_icon9.png" alt=""></i>
-          <p>更多</p>
+          <a href="">
+            <i><img src="images/index_icon9.png" alt=""></i>
+            <p>更多</p>
+          </a>
         </li>
       </ul>
     </div>
+  </div>
+</div>
+<div class="page-search">
+  <header class="header">
+      <div class="left"><a class="arrow-left" href="javascript:;"></a></div>
+      <div class="middle"><a href="javascript:;"><img src="images/search_icon1.png" alt=""></a></div>
+  </header>
+  <div class="page-search-content">
+    <label><input type="text" placeholder="模糊查找"><i><img src="images/search_icon2.png" alt=""></i></label>
+    <div class="list"> 
+      <ul>
+        <li><span>果然心动主题酒店江汉路店</span><i></i></li>
+        <li><span>鑫鑫旅社</span><i></i></li>
+        <li><span>新梦宾馆</span><i></i></li>
+        <li><span>武汉清宿酒店管理有限公司</span><i></i></li> 
+      </ul>
+      <a class="btn" href="javascript:;">选 择</a>
+    </div>
+    <div class="logo"><img src="images/search_log.png" alt=""></div>
+  </div>
+</div>
+<div class="page-date">
+  <header class="header">
+      <div class="left"><a class="arrow-left" href="javascript:;"></a></div>
+      <div class="middle"><a href="javascript:;"><img src="images/date_icon1.png" alt=""></a></div>
+  </header>
+  <div class="page-date-content">
+    <div class='calendar' id='calendar'></div>
+    <a class="btn" href="javascript:;">确 认</a>
+    <div class="logo"><img src="images/search_log.png" alt=""></div>
   </div>
 </div>
 <!-- script begin -->
 <script src="scripts/flexible.js"></script>
 <script src="scripts/jquery-3.1.1.min.js"></script>
 <script>
+  $(document).ready(function(){
+    //点击搜索图标
+    $(".header-index .right").on("click",function(){
+      $(".wrapper").addClass("on");
+      $(".page-search").addClass("on");
+    });
+    //点击搜索返回
+    $(".page-search .left").on("click",function(){
+      $(".wrapper").removeClass("on");
+      $(".page-search").removeClass("on");
+    });
+    //选择搜索列表
+    $(".page-search-content .list ul li").on("click",function(){
+      $(this).addClass("on").siblings().removeClass("on");
+    });
+    //选 择
+    $(".page-search-content .list .btn").on("click",function(){
+      $(".wrapper").removeClass("on");
+      $(".page-search").removeClass("on");
+    });
+    //点击日期
+    $(".index-content .top .date").on("click",function(){
+      $(".wrapper").addClass("on");
+      $(".page-date").addClass("on");
+    });
+    //点击搜索返回
+    $(".page-date .left").on("click",function(){
+      $(".wrapper").removeClass("on");
+      $(".page-date").removeClass("on");
+    });
+    //确定
+    $(".page-date-content .btn").on("click",function(){
+      $(".wrapper").removeClass("on");
+      $(".page-date").removeClass("on");
+    });
+  })
+</script>
+<script>
+  (function(){
+  /*
+   * 用于记录日期，显示的时候，根据dateObj中的日期的年月显示
+   */
+  var dateObj = (function(){
+    var _date = new Date();    // 默认为当前系统时间
+    return {
+      getDate : function(){
+        return _date;
+      },
+      setDate : function(date) {
+        _date = date;
+      }
+    };
+  })();
+
+  // 设置calendar div中的html部分
+  renderHtml();
+  // 表格中显示日期
+  showCalendarData();
+  // 绑定事件
+  bindEvent();
+
+  /**
+   * 渲染html结构
+   */
+  function renderHtml() {
+    var calendar = document.getElementById("calendar");
+    var titleBox = document.createElement("div");  // 标题盒子 设置上一月 下一月 标题
+    var bodyBox = document.createElement("div");  // 表格区 显示数据
+
+    // 设置标题盒子中的html
+    titleBox.className = 'calendar-title-box';
+    titleBox.innerHTML = "<span class='prev-month' id='prevMonth'></span>" +
+      "<span class='calendar-title' id='calendarTitle'></span>" +
+      "<span id='nextMonth' class='next-month'></span>";
+    calendar.appendChild(titleBox);    // 添加到calendar div中
+
+    // 设置表格区的html结构
+    bodyBox.className = 'calendar-body-box';
+    var _headHtml = "<ul>" + 
+              "<li>周日</li>" +
+              "<li>周一</li>" +
+              "<li>周二</li>" +
+              "<li>周三</li>" +
+              "<li>周四</li>" +
+              "<li>周五</li>" +
+              "<li>周六</li>" +
+            "</ul>";
+    var _bodyHtml = "";
+
+    // 一个月最多31天，所以一个月最多占6行表格
+    for(var i = 0; i < 6; i++) {  
+      _bodyHtml += "<dl>" +
+              "<dd></dd>" +
+              "<dd></dd>" +
+              "<dd></dd>" +
+              "<dd></dd>" +
+              "<dd></dd>" +
+              "<dd></dd>" +
+              "<dd></dd>" +
+            "</dl>";
+    }
+    bodyBox.innerHTML = "<div id='calendarTable' class='calendar-table'>" +
+              _headHtml + _bodyHtml +
+              "</div>";
+    // 添加到calendar div中
+    calendar.appendChild(bodyBox);
+  }
+
+  /**
+   * 表格中显示数据，并设置类名
+   */
+  function showCalendarData() {
+    var _year = dateObj.getDate().getFullYear();
+    var _month = dateObj.getDate().getMonth() + 1;
+    var _dateStr = getDateStr(dateObj.getDate());
+
+    // 设置顶部标题栏中的 年、月信息
+    var calendarTitle = document.getElementById("calendarTitle");
+    var titleStr = _dateStr.substr(0, 4) + "年" + _dateStr.substr(4,2) + "月";
+    calendarTitle.innerText = titleStr;
+
+    // 设置表格中的日期数据
+    var _table = document.getElementById("calendarTable");
+    var _tds = _table.getElementsByTagName("dd");
+    var _firstDay = new Date(_year, _month - 1, 1);  // 当前月第一天
+    for(var i = 0; i < _tds.length; i++) {
+      var _thisDay = new Date(_year, _month - 1, i + 1 - _firstDay.getDay());
+      var _thisDayStr = getDateStr(_thisDay);
+      _tds[i].innerText = _thisDay.getDate();
+      //_tds[i].data = _thisDayStr;
+      _tds[i].setAttribute('data', _thisDayStr);
+      if(_thisDayStr == getDateStr(new Date())) {    // 当前天
+        _tds[i].className = 'currentMonth currentDay';
+      }else if(_thisDayStr.substr(0, 6) == getDateStr(_firstDay).substr(0, 6)) {
+        _tds[i].className = 'currentMonth';  // 当前月
+      }else {    // 其他月
+        _tds[i].className = 'otherMonth';
+      }
+    }
+    //点击每一个dd添加css
+    var _tdsCls = _table.getElementsByClassName("currentMonth");
+    for(var j=0;j<_tdsCls.length;j++){
+      _tdsCls[j].index=j;
+      _tdsCls[j].addEventListener("click", function() {
+        for(var j=0;j<_tdsCls.length;j++){
+          _tdsCls[j].className='currentMonth'
+        }
+        this.className='currentMonth on'
+        console.log(this.getAttribute('data'))
+        $(".index-content .top .date p").text(this.getAttribute('data').substr(0, 4)+'.'+this.getAttribute('data').substr(4, 2));
+        $(".index-content .top .date h2").text(this.getAttribute('data').substr(6, 2));
+      });
+    }
+  }
+
+  /**
+   * 绑定上个月下个月事件
+   */
+  function bindEvent() {
+    var prevMonth = document.getElementById("prevMonth");
+    var nextMonth = document.getElementById("nextMonth");
+    addEvent(prevMonth, 'click', toPrevMonth);
+    addEvent(nextMonth, 'click', toNextMonth);
+  }
+
+  /**
+   * 绑定事件
+   */
+  function addEvent(dom, eType, func) {
+    if(dom.addEventListener) {  // DOM 2.0
+      dom.addEventListener(eType, function(e){
+        func(e);
+      });
+    } else if(dom.attachEvent){  // IE5+
+      dom.attachEvent('on' + eType, function(e){
+        func(e);
+      });
+    } else {  // DOM 0
+      dom['on' + eType] = function(e) {
+        func(e);
+      }
+    }
+  }
+
+  /**
+   * 点击上个月图标触发
+   */
+  function toPrevMonth() {
+    var date = dateObj.getDate();
+    dateObj.setDate(new Date(date.getFullYear(), date.getMonth() - 1, 1));
+    showCalendarData();
+  }
+
+  /**
+   * 点击下个月图标触发
+   */
+  function toNextMonth() {
+    var date = dateObj.getDate();
+    dateObj.setDate(new Date(date.getFullYear(), date.getMonth() + 1, 1));
+    showCalendarData();
+  }
+
+  /**
+   * 日期转化为字符串， 4位年+2位月+2位日
+   */
+  function getDateStr(date) {
+    var _year = date.getFullYear();
+    var _month = date.getMonth() + 1;    // 月从0开始计数
+    var _d = date.getDate();
+     
+    _month = (_month > 9) ? ("" + _month) : ("0" + _month);
+    _d = (_d > 9) ? ("" + _d) : ("0" + _d);
+    return _year + _month + _d;
+  }
+  })();
 </script>
 <!-- script end -->
 </body>
