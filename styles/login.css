@@ -12,7 +12,8 @@ html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   /*取消掉300ms的延迟，chrome和safari可以生效*/
-  touch-action: manipulation; }
+  touch-action: manipulation;
+}
 
 html, body {
   /*-webkit-user-select:none禁止用户进行复制.选择.*/
@@ -21,14 +22,28 @@ html, body {
   width: 100%;
   /*使用min-height:100%代替height：100%*/
   height: 100%;
-  min-height: 100%; }
+  min-height: 100%;
+}
 
 body {
   /*弹性滚动-局部滚动开启弹性滚动：将属性挂在body上，可以避免很多奇怪的bug。*/
   overflow: scroll;
-  -webkit-overflow-scrolling: touch; }
+  -webkit-overflow-scrolling: touch;
+}
 
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, div, mark, audio, video {
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, div, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -40,16 +55,19 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   /* Firefox */
   -webkit-box-sizing: border-box;
   /* Safari */
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 ol, ul {
   /*去掉列表点*/
-  list-style: none; }
+  list-style: none;
+}
 
 table {
   /*去掉表格的双行线*/
   border-collapse: collapse;
-  border-spacing: 0; }
+  border-spacing: 0;
+}
 
 /*取消a标签在移动端点击时的背景颜色*/
 a, a:hover, a:active, a:visited, a:link, a:focus {
@@ -57,15 +75,18 @@ a, a:hover, a:active, a:visited, a:link, a:focus {
   -webkit-tap-highlight-color: transparent;
   outline: none;
   background: none;
-  text-decoration: none; }
+  text-decoration: none;
+}
 
 a, img {
   /* 禁止长按链接与图片弹出菜单 */
-  -webkit-touch-callout: none; }
+  -webkit-touch-callout: none;
+}
 
 input {
   /*ios去除input默认样式*/
-  -webkit-appearance: none; }
+  -webkit-appearance: none;
+}
 
 /* =================================================================
 * Reset Style for Mobile
@@ -75,7 +96,8 @@ input {
 * Version:0.0.2
 * ================================================================== */
 .arrow-left {
-  position: relative; }
+  position: relative;
+}
 .arrow-left:after {
   content: '';
   position: absolute;
@@ -92,10 +114,12 @@ input {
   -o-transform: translate3d(-50%, -50%, 0) rotateZ(-45deg);
   -ms-transform: translate3d(-50%, -50%, 0) rotateZ(-45deg);
   -webkit-transform: translate3d(-50%, -50%, 0) rotateZ(-45deg);
-  transform: translate3d(-50%, -50%, 0) rotateZ(-45deg); }
+  transform: translate3d(-50%, -50%, 0) rotateZ(-45deg);
+}
 
 .arrow-bottom {
-  position: relative; }
+  position: relative;
+}
 .arrow-bottom:after {
   content: '';
   position: absolute;
@@ -112,10 +136,12 @@ input {
   -o-transform: translate3d(-50%, -50%, 0) rotateZ(-135deg);
   -ms-transform: translate3d(-50%, -50%, 0) rotateZ(-135deg);
   -webkit-transform: translate3d(-50%, -50%, 0) rotateZ(-135deg);
-  transform: translate3d(-50%, -50%, 0) rotateZ(-135deg); }
+  transform: translate3d(-50%, -50%, 0) rotateZ(-135deg);
+}
 
 .arrow-top {
-  position: relative; }
+  position: relative;
+}
 .arrow-top:after {
   content: '';
   position: absolute;
@@ -132,10 +158,12 @@ input {
   -o-transform: translate3d(-50%, -50%, 0) rotateZ(45deg);
   -ms-transform: translate3d(-50%, -50%, 0) rotateZ(45deg);
   -webkit-transform: translate3d(-50%, -50%, 0) rotateZ(45deg);
-  transform: translate3d(-50%, -50%, 0) rotateZ(45deg); }
+  transform: translate3d(-50%, -50%, 0) rotateZ(45deg);
+}
 
 .arrow-right {
-  position: relative; }
+  position: relative;
+}
 .arrow-right:after {
   content: '';
   position: absolute;
@@ -152,7 +180,8 @@ input {
   -o-transform: translate3d(-50%, -50%, 0) rotateZ(135deg);
   -ms-transform: translate3d(-50%, -50%, 0) rotateZ(135deg);
   -webkit-transform: translate3d(-50%, -50%, 0) rotateZ(135deg);
-  transform: translate3d(-50%, -50%, 0) rotateZ(135deg); }
+  transform: translate3d(-50%, -50%, 0) rotateZ(135deg);
+}
 
 .close-icon {
   position: relative;
@@ -161,10 +190,12 @@ input {
   overflow: hidden;
   border-radius: 50px;
   background: #ff366f;
-  opacity: 1; }
+  opacity: 1;
+}
 .close-icon:hover {
   cursor: pointer;
-  opacity: 1; }
+  opacity: 1;
+}
 .close-icon:before {
   content: '';
   position: absolute;
@@ -179,7 +210,8 @@ input {
   -o-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
-  transform: rotate(45deg); }
+  transform: rotate(45deg);
+}
 .close-icon:after {
   content: '';
   position: absolute;
@@ -194,18 +226,19 @@ input {
   -o-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
-  transform: rotate(-45deg); }
+  transform: rotate(-45deg);
+}
 
 .wrapper {
   position: relative;
   width: 100%;
-  max-width: 640px;
   min-height: 100%;
   height: auto;
   margin: 0 auto;
   background: url(../images/logo_bg.jpg) repeat-y;
   background-size: 100% auto;
-  overflow: hidden; }
+  overflow: hidden;
+}
 
 .header {
   position: relative;
@@ -218,18 +251,22 @@ input {
   align-items: center;
   -webkit-justify-content: center;
   -moz-justify-content: center;
-  justify-content: center; }
+  justify-content: center;
+}
 .header .logo {
   width: 2.77rem;
-  height: 3.02rem; }
+  height: 3.02rem;
+}
 .header .logo img {
-  width: 100%; }
+  width: 100%;
+}
 .header p {
   position: absolute;
   left: 1.2rem;
   bottom: 0.15rem;
   font: 0.33rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
-  color: #fff; }
+  color: #fff;
+}
 
 .shand {
   padding: .2rem 0 .2rem  1.23rem;
@@ -238,20 +275,25 @@ input {
   display: -webkit-flex;
   display: flex;
   -webkit-align-items: center;
-  align-items: center; }
+  align-items: center;
+}
 .shand .img {
   width: .64rem;
-  height: .65rem; }
+  height: .65rem;
+}
 .shand .img img {
-  width: 100%; }
+  width: 100%;
+}
 .shand p {
   margin-left: .15rem;
   font: 0.5554rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
-  color: #fff; }
+  color: #fff;
+}
 
 .login {
   margin-top: .05rem;
-  background: rgba(43, 43, 43, 0.8); }
+  background: rgba(43, 43, 43, 0.8);
+}
 .login .itmes {
   padding-top: .55rem;
   display: -moz-flex;
@@ -261,24 +303,30 @@ input {
   align-items: center;
   -webkit-justify-content: center;
   -moz-justify-content: center;
-  justify-content: center; }
+  justify-content: center;
+}
 .login .itmes i:first-child {
   width: .57rem;
-  height: .57rem; }
+  height: .57rem;
+}
 .login .itmes i:first-child img {
-  width: 100%; }
+  width: 100%;
+}
 .login .itmes i:last-child {
   width: .36rem;
-  height: .38rem; }
+  height: .38rem;
+}
 .login .itmes i:last-child img {
-  width: 100%; }
+  width: 100%;
+}
 .login .itmes label {
   padding: 0 .15rem;
   margin: 0 .15rem;
   width: 3.78rem;
   height: .6rem;
   border-bottom: 1px solid #fff;
-  font-size: 0; }
+  font-size: 0;
+}
 .login .itmes label input {
   background: none;
   border: none;
@@ -286,9 +334,11 @@ input {
   width: 100%;
   height: 100%;
   font: 0.33rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
-  color: #fff; }
+  color: #fff;
+}
 .login .itmes label input::-webkit-input-placeholder {
-  color: #fff; }
+  color: #fff;
+}
 .login .btn {
   margin: .55rem auto 0;
   width: 5.1rem;
@@ -300,12 +350,14 @@ input {
   background: -moz-linear-gradient(top left, #f8ab26, #fe8f4d);
   background: linear-gradient(to top left, #f8ab26, #fe8f4d);
   -webkit-box-shadow: 0px 2px 5px #ff9602;
-  box-shadow: 0px 2px 5px #ff9602; }
+  box-shadow: 0px 2px 5px #ff9602;
+}
 .login .btn a {
   display: block;
   font: 0.44rem/0.9rem -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
   color: #fff;
-  text-align: center; }
+  text-align: center;
+}
 .login .footer {
   padding-bottom: .3rem;
   margin: .55rem .6rem 0 .6rem;
@@ -316,13 +368,16 @@ input {
   align-items: center;
   -webkit-justify-content: flex-end;
   -moz-justify-content: flex-end;
-  justify-content: flex-end; }
+  justify-content: flex-end;
+}
 .login .footer .text p {
   font: 0.125rem/1.2 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
-  color: #fff; }
+  color: #fff;
+}
 .login .footer h3 {
   margin-left: .3rem;
   font: 0.3rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
-  color: #fff; }
+  color: #fff;
+}
 
 /*# sourceMappingURL=login.css.map */

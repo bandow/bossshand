@@ -232,7 +232,6 @@ input {
 .wrapper {
   position: relative;
   width: 100%;
-  max-width: 640px;
   min-height: 100%;
   height: auto;
   margin: 0 auto;
@@ -495,7 +494,6 @@ input {
   right: 0;
   bottom: 0;
   width: 100%;
-  max-width: 640px;
   min-height: 100%;
   height: auto;
   margin: 0 auto;
@@ -631,7 +629,6 @@ input {
   right: 0;
   bottom: 0;
   width: 100%;
-  max-width: 640px;
   min-height: 100%;
   height: auto;
   margin: 0 auto;
@@ -740,6 +737,9 @@ input {
   display: flex;
   -webkit-align-items: center;
   align-items: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
 }
 .page-date-content .calendar .calendar-body-box .calendar-table dl dd {
   width: .77rem;

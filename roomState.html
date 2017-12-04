@@ -25,7 +25,103 @@
       <h2>丽枫酒店泸州佳乐世纪城店 </h2>
     </div>
     <div class="room-state">
-      
+      <ul>
+        <li data-id="1"><i><img src="images/state1.png" alt=""></i><span>在住</span></li>
+        <li data-id="2"><i><img src="images/state2.png" alt=""></i><span>干净</span></li>
+        <li data-id="3"><i><img src="images/state3.png" alt=""></i><span>脏房</span></li>
+        <li data-id="4"><i><img src="images/state4.png" alt=""></i><span>停售</span></li>
+        <li data-id="5"><i><img src="images/state5.png" alt=""></i><span>清洁</span></li>
+        <li data-id="6"><i><img src="images/state6.png" alt=""></i><span>检查</span></li>
+        <li data-id="7"><i><img src="images/state7.png" alt=""></i><span>保密</span></li>
+        <li data-id="8"><i><img src="images/state8.png" alt=""></i><span>钟点</span></li>
+        <li data-id="9"><i><img src="images/state9.png" alt=""></i><span>VIP</span></li>
+        <li data-id="10"><i><img src="images/state10.png" alt=""></i><span>预离</span></li>
+        <li data-id="11"><i><img src="images/state11.png" alt=""></i><span>欠费</span></li>
+        <li data-id="12" class="on"><i><img src="images/state12.png" alt=""></i><span>全部</span></li>
+      </ul>
+      <div class="room-state-list">
+        <div class="room-state-list-title">
+          <div class="l">
+            <i><img src="images/roomState_icon2.png" alt=""></i>
+            <span>房态</span>
+          </div>
+          <div class="r">
+            <span>房号</span>
+            <span>房型</span>
+            <span>楼层</span>
+          </div>
+        </div>
+        <div class="list">
+          <div data-index="1" class="list-items live">
+            <h3>韩先生</h3>
+            <div class="icon">
+              <i><img src="images/state10.png" alt=""></i>
+              <i><img src="images/state8.png" alt=""></i>
+              <i><img src="images/state5.png" alt=""></i>
+            </div>
+            <h4>SDK</h4>
+            <h2>8001</h2>
+          </div>
+          <div data-index="5" class="list-items cleaning">
+            <h3>韩先生</h3>
+            <div class="icon"></div>
+            <h4>SDK</h4>
+            <h2>8001</h2>
+          </div>
+          <div data-index="2" class="list-items clean">
+            <h3></h3>
+            <div class="icon"></div>
+            <h4>SDK</h4>
+            <h2>8001</h2>
+          </div>
+          <div data-index="2" class="list-items clean">
+            <h3></h3>
+            <div class="icon"></div>
+            <h4>SDK</h4>
+            <h2>8001</h2>
+          </div>
+          <div data-index="3" class="list-items dirty">
+            <h3></h3>
+            <div class="icon"><i><img src="images/state3.png" alt=""></i></div>
+            <h4>SDK</h4>
+            <h2>8001</h2>
+          </div>
+          <div data-index="1" class="list-items live">
+            <h3>韩先生</h3>
+            <div class="icon">
+              <i><img src="images/state10.png" alt=""></i>
+              <i><img src="images/state8.png" alt=""></i>
+              <i><img src="images/state5.png" alt=""></i>
+            </div>
+            <h4>SDK</h4>
+            <h2>8001</h2>
+          </div>
+          <div data-index="5" class="list-items cleaning">
+            <h3>韩先生</h3>
+            <div class="icon"></div>
+            <h4>SDK</h4>
+            <h2>8001</h2>
+          </div>
+          <div data-index="2" class="list-items clean">
+            <h3></h3>
+            <div class="icon"></div>
+            <h4>SDK</h4>
+            <h2>8001</h2>
+          </div>
+          <div data-index="2" class="list-items clean">
+            <h3></h3>
+            <div class="icon"></div>
+            <h4>SDK</h4>
+            <h2>8001</h2>
+          </div>
+          <div data-index="3" class="list-items dirty">
+            <h3></h3>
+            <div class="icon"><i><img src="images/state3.png" alt=""></i></div>
+            <h4>SDK</h4>
+            <h2>8001</h2>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="logo"><img src="images/search_log.png" alt=""></div>
   </div>
@@ -33,6 +129,19 @@
 <!-- script begin -->
 <script src="scripts/flexible.js"></script>
 <script src="scripts/jquery-3.1.1.min.js"></script>
+<script>
+  $(document).ready(function(){
+    $(".roomState-content .room-state ul li").on("click",function(){
+      $(this).addClass('on').siblings().removeClass('on');
+      var dataId=$(this).attr("data-id");
+      $(".roomState-content .room-state .room-state-list .list .list-items").hide();
+      $('.roomState-content .room-state .room-state-list .list .list-items[data-index="'+dataId+'"]').show(); 
+      if(dataId==12){
+        $('.roomState-content .room-state .room-state-list .list .list-items').show(); 
+      }
+    })
+  })
+</script>
 <!-- script end -->
 </body>
 </html>

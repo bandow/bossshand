@@ -232,7 +232,6 @@ input {
 .wrapper {
   position: relative;
   width: 100%;
-  max-width: 640px;
   min-height: 100%;
   height: auto;
   margin: 0 auto;
@@ -306,6 +305,175 @@ input {
   height: 100%;
 }
 
+.roomState-content .title {
+  width: 100%;
+  height: 1.15rem;
+  background: url(../images/top_bg.jpg) no-repeat;
+  background-size: 100% auto;
+}
+.roomState-content .title h2 {
+  padding: .35rem 0 0 .5rem;
+  font: 0.42rem/1.2 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #2b2b2b;
+}
+.roomState-content .room-state ul {
+  padding: .3rem .2rem;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.roomState-content .room-state ul li {
+  border: 1px solid #f5f5f5;
+  padding: .1rem 0;
+  width: 16.666666666666668%;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+}
+.roomState-content .room-state ul li i {
+  margin-right: .1rem;
+  width: .3rem;
+  height: .3rem;
+  font-size: 0;
+}
+.roomState-content .room-state ul li i img {
+  width: 100%;
+  height: 100%;
+}
+.roomState-content .room-state ul li span {
+  font: 0.21rem/1.2 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #565b5e;
+}
+.roomState-content .room-state ul li.on {
+  border: 1px solid #f6ac1d;
+  color: #f6ac1d;
+  border-radius: 5px;
+}
+.roomState-content .room-state ul li.on span {
+  color: #f6ac1d;
+}
+.roomState-content .room-state .room-state-list {
+  padding: .3rem .4rem;
+  background-color: #fff;
+}
+.roomState-content .room-state .room-state-list .room-state-list-title {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+}
+.roomState-content .room-state .room-state-list .room-state-list-title .l {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.roomState-content .room-state .room-state-list .room-state-list-title .l i {
+  width: .6rem;
+  height: .6rem;
+  font-size: 0;
+}
+.roomState-content .room-state .room-state-list .room-state-list-title .l i img {
+  width: 100%;
+  height: 100%;
+}
+.roomState-content .room-state .room-state-list .room-state-list-title .l span {
+  margin-left: .1rem;
+  font: 0.33rem/0.6rem -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #565b5e;
+}
+.roomState-content .room-state .room-state-list .room-state-list-title .r {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.roomState-content .room-state .room-state-list .room-state-list-title .r span {
+  margin-left: .3rem;
+  font: 0.25rem/0.6rem -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #565b5e;
+}
+.roomState-content .room-state .room-state-list .list {
+  margin: 0 -.065rem;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.roomState-content .room-state .room-state-list .list .list-items {
+  padding: .05rem;
+  width: 1.3rem;
+  height: 1.3rem;
+  margin: .2rem .065rem 0 .065rem;
+}
+.roomState-content .room-state .room-state-list .list .list-items h3 {
+  height: .3rem;
+  font: 0.25rem/0.3rem -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #fff;
+}
+.roomState-content .room-state .room-state-list .list .list-items .icon {
+  height: .3rem;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: flex-end;
+  -moz-justify-content: flex-end;
+  justify-content: flex-end;
+}
+.roomState-content .room-state .room-state-list .list .list-items .icon i {
+  margin-left: .05rem;
+  width: .3rem;
+  height: .3rem;
+  font-size: 0;
+}
+.roomState-content .room-state .room-state-list .list .list-items .icon i img {
+  width: 100%;
+  height: 100%;
+}
+.roomState-content .room-state .room-state-list .list .list-items h4 {
+  text-align: right;
+  height: .3rem;
+  font: 0.25rem/0.3rem -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #fff;
+}
+.roomState-content .room-state .room-state-list .list .list-items h2 {
+  text-align: right;
+  height: .35rem;
+  font: 0.334rem/0.35rem -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #fff;
+}
+.roomState-content .room-state .room-state-list .list .list-items.live {
+  background-color: #1ea088;
+}
+.roomState-content .room-state .room-state-list .list .list-items.clean {
+  background-color: #00a2e8;
+}
+.roomState-content .room-state .room-state-list .list .list-items.cleaning {
+  background-color: #8c9371;
+}
+.roomState-content .room-state .room-state-list .list .list-items.dirty {
+  background-color: #959ea7;
+}
 .roomState-content .logo {
   margin: .35rem auto .3rem;
   width: .38rem;

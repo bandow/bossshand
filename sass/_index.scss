@@ -2,7 +2,7 @@
 .wrapper{
 	position:relative;
 	width:100%;
-	max-width:640px;
+	// max-width:640px;
 	min-height:100%;
 	height:auto;
 	margin:0 auto;
@@ -210,7 +210,7 @@
 	right:0;
 	bottom:0;
 	width:100%;
-	max-width:640px;
+	// max-width:640px;
 	min-height:100%;
 	height:auto;
 	margin:0 auto;
@@ -323,7 +323,7 @@
 	right:0;
 	bottom:0;
 	width:100%;
-	max-width:640px;
+	// max-width:640px;
 	min-height:100%;
 	height:auto;
 	margin:0 auto;
@@ -402,6 +402,7 @@
 					padding:.1rem .5rem;
 					@include display(flex);
 					@include align-items(center);
+					@include justify-content(center);
 					dd{
 						width:.77rem;
 						height:.77rem;
