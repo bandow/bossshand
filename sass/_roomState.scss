@@ -114,6 +114,8 @@
 		.room-state-list{
 			padding:.3rem .4rem;
 			background-color:#fff;
+			overflow: auto;
+    		height: 6.1rem;
 			.room-state-list-title{
 				@include display(flex);
 				@include align-items(center);

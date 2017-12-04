@@ -364,6 +364,8 @@ input {
 .roomState-content .room-state .room-state-list {
   padding: .3rem .4rem;
   background-color: #fff;
+  overflow: auto;
+  height: 6.1rem;
 }
 .roomState-content .room-state .room-state-list .room-state-list-title {
   display: -moz-flex;
